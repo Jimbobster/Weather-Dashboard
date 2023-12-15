@@ -1,11 +1,5 @@
 /*Browser Styles*/
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li {
+body, h1, h2, h3, p, ul, li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,21 +7,22 @@ li {
 
 /* Background color and font */
 body {
-  background-color: #f4f4f4;
+  background-color: #edeef5;
   font-family: 'Orbitron', sans-serif;
   line-height: 1.6;
 }
 
 /* Header */
 .weather-header {
-  background-color: #007bff;
+  background-color: #be1a8a;
   text-align: center;
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 
 .weather-header h1 {
   margin: 0;
-  color: #ffffff;
+  color: #000000;
+
 }
 
 /* Main container */
@@ -40,19 +35,20 @@ body {
 /* Search form and history list */
 .form {
   margin-bottom: 20px;
+  color: #000000;
 }
 
 .weather-search {
   width: 100%;
-  padding: 12px;
-  font-size: 18px;
+  padding: 15px;
+  font-size: 20px;
   text-align: center;
-  
+  border: 2px solid #000000; 
 }
 
 .search-button {
   background-color: #007bff;
-  color: #fff;
+  color: #000000;
   padding: 12px 20px;
   font-size: 18px;
   border: none;
@@ -64,18 +60,21 @@ body {
   background-color: #007bff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  border: 2px solid #000000; 
+  font-weight: bold;
 }
 
 /* Forecast cards */
 .col-md-2 {
-  background-color: #66e517;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #12e00e;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgb(244, 240, 240);
   text-align: center;
+  font-weight: bold;
+  font-size: larger;
 }
 
 /* Spacing between elements */
@@ -95,7 +94,7 @@ body {
 #history {
     margin-top: 20px;
     padding: 20px;
-    border: 1px solid #007bff;
+    border: 2px solid #000000;
     border-radius: 8px;
   }
   
@@ -127,8 +126,6 @@ body {
 
   body {
     margin-bottom: 60px;
-
-    background-size: cover;
   }
 
   .weather-header {
@@ -143,6 +140,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff; 
-    padding: 10px;
+    color: #000000; 
+    padding: 1em;
+    font-weight: bold;
   }

@@ -40,3 +40,6 @@ Open the Website by clicking this link :
 ## Credits :
 <li> Data retrieved from openweathermap.org
 <li> Fonts used from Google
+
+## License
+MIT License - Please see the repository for more information
