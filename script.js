@@ -60,7 +60,6 @@ async function getCurrentWeather(city) {
       <i class="weather-icon ${getWeatherIconClass(data.weather[0].main)}"></i>
     `;
   }
-  
   // Function to update the UI with the 5-day forecast data
   function updateForecast(data) {
 
@@ -78,48 +77,81 @@ async function getCurrentWeather(city) {
           <i class="weather-icon ${getWeatherIconClass(day.weather[0].main)}"></i>
         </div>
       `;
+      
     }
   }
-  
-  // Event listener for the form
-  document.getElementById('search-form').addEventListener('submit', async function (event) {
-    event.preventDefault();
-  
-    const searchInput = document.getElementById('search-input');
-    const city = searchInput.value.trim();
-  
-    if (city === '') {
-      alert('Please enter a city name.');
-      return;
-    }
-  
-    // Get current weather data
-    const currentWeatherData = await getCurrentWeather(city);
-  
-    if (currentWeatherData) {
-      // Update the UI with current weather data
-      updateCurrentWeather(currentWeatherData);
-  
-      // Get 5-day forecast data
-      const forecastData = await getForecast(city);
-  
-      if (forecastData) {
-        // Update the UI with the 5-day forecast data
-        updateForecast(forecastData);
-  
-        // Add the city to the search history
-        const historyList = document.getElementById('history');
-        const listItem = document.createElement('a');
-        listItem.href = '#';
-        listItem.classList.add('list-group-item', 'list-group-item-action');
-        listItem.textContent = city;
-        listItem.addEventListener('click', async function () {
-          // When a user clicks on a city in the search history, show current and future conditions
-          updateCurrentWeather(await getCurrentWeather(city));
-          updateForecast(await getForecast(city));
-        });
-  
-        historyList.appendChild(listItem);
-      }
-    }
+   // Function to save search history to local storage
+function saveToLocalStorage(city) {
+  let history = JSON.parse(localStorage.getItem('weatherHistory')) || [];
+  history.push(city);
+  localStorage.setItem('weatherHistory', JSON.stringify(history));
+}
+
+// Function to display search history from local storage
+function displaySearchHistory() {
+  const historyList = document.getElementById('history');
+  historyList.innerHTML = '<h3>Location Search History</h3>';
+
+  const history = JSON.parse(localStorage.getItem('weatherHistory')) || [];
+
+  history.forEach((city) => {
+    const listItem = document.createElement('a');
+    listItem.href = '#';
+    listItem.classList.add('list-group-item', 'list-group-item-action');
+    listItem.textContent = city;
+    listItem.addEventListener('click', async function () {
+      // When a user clicks on a city in the search history, show current and future conditions
+      updateCurrentWeather(await getCurrentWeather(city));
+      updateForecast(await getForecast(city));
+    });
+
+    historyList.appendChild(listItem);
   });
+}
+// Event listener for the form
+document.getElementById('search-form').addEventListener('submit', async function (event) {
+  event.preventDefault();
+
+  const searchInput = document.getElementById('search-input');
+  const city = searchInput.value.trim();
+
+  if (city === '') {
+    alert('Please enter a city name.');
+    return;
+  }
+
+  // Get current weather data
+  const currentWeatherData = await getCurrentWeather(city);
+
+  if (currentWeatherData) {
+    // Update the UI with current weather data
+    updateCurrentWeather(currentWeatherData);
+
+    // Get 5-day forecast data
+    const forecastData = await getForecast(city);
+
+    if (forecastData) {
+      // Update the UI with the 5-day forecast data
+      updateForecast(forecastData);
+
+      // Save the city to local storage
+      saveToLocalStorage(city);
+
+      // Add the city to the search history
+      const historyList = document.getElementById('history');
+      const listItem = document.createElement('a');
+      listItem.href = '#';
+      listItem.classList.add('list-group-item', 'list-group-item-action');
+      listItem.textContent = city;
+      listItem.addEventListener('click', async function () {
+        // When a user clicks on a city in the search history, show current and future conditions
+        updateCurrentWeather(await getCurrentWeather(city));
+        updateForecast(await getForecast(city));
+      });
+
+      historyList.appendChild(listItem);
+    }
+  }
+  // Display the search history
+  displaySearchHistory();
+});

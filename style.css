@@ -34,6 +34,7 @@ body {
 .container-fluid {
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* Search form and history list */
@@ -45,6 +46,7 @@ body {
   width: 100%;
   padding: 12px;
   font-size: 18px;
+  text-align: center;
   
 }
 
@@ -63,6 +65,7 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 /* Forecast cards */
@@ -107,6 +110,39 @@ body {
   }
 
 /* Weather icons */
-.weather-icon {
-  font-size: 3rem;
+ .weather-icon {
+  font-size: 4rem;
 }
+
+/*Footer*/
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+  }
+
+  body {
+    margin-bottom: 60px;
+
+    background-size: cover;
+  }
+
+  .weather-header {
+    background-image: url('weather.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  footer {
+    background-image: url('weather.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; 
+    padding: 10px;
+  }
