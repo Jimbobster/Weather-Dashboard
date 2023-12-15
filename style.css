@@ -1,0 +1,112 @@
+/*Browser Styles*/
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background color and font */
+body {
+  background-color: #f4f4f4;
+  font-family: 'Orbitron', sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+.weather-header {
+  background-color: #007bff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.weather-header h1 {
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Main container */
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Search form and history list */
+.form {
+  margin-bottom: 20px;
+}
+
+.weather-search {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  
+}
+
+.search-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Main content area */
+.col-lg-9 {
+  background-color: #007bff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Forecast cards */
+.col-md-2 {
+  background-color: #66e517;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Spacing between elements */
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.pb-3 {
+  padding-bottom: 3rem;
+}
+
+/* Search history list */
+#history {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+  }
+  
+  .list-group-item {
+    cursor: pointer;
+    padding: 12px;
+    font-size: 18px;
+  }
+  
+  .list-group-item:hover {
+    background-color: #007bff;
+  }
+
+/* Weather icons */
+.weather-icon {
+  font-size: 3rem;
+}
