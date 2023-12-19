@@ -34,8 +34,10 @@ When you click on a city in the search history, you will be presented with the c
 Open the Website by clicking this link : 
 
 ## Usage
-<li>URL of the Deployed Application : 
-<li>URL of the repository that contains my code : 
+<li>URL of the Deployed Application : https://jimbobster.github.io/Weather-Dashboard/
+<li>URL of the repository that contains my code : https://github.com/Jimbobster/Weather-Dashboard
+<li> Screenshot of the Deployed Application : (https://github.com/Jimbobster/Weather-Dashboard/assets/146639118/cc8d1a08-59ea-4cb4-bcd8-0344521b54da)
+
 
 ## Credits :
 <li> Data retrieved from openweathermap.org
