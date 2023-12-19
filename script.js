@@ -80,6 +80,7 @@ async function getCurrentWeather(city) {
       
     }
   }
+
    // Function to save search history to local storage
 function saveToLocalStorage(city) {
   let history = JSON.parse(localStorage.getItem('weatherHistory')) || [];
@@ -108,6 +109,7 @@ function displaySearchHistory() {
     historyList.appendChild(listItem);
   });
 }
+
 // Event listener for the form
 document.getElementById('search-form').addEventListener('submit', async function (event) {
   event.preventDefault();
